@@ -22,7 +22,7 @@ def leer_archivo(nombre_archivo):
 
 #Metodo
 def generar_archivo(data):
-    with open('./kaggle/grupo16.csv', 'w') as outfile:
+    with open('grupo16.csv', 'w') as outfile:
         fieldnames = ['Id', 'Prediction']
         submission_writer = csv.DictWriter(outfile, fieldnames=fieldnames)
         submission_writer.writeheader()

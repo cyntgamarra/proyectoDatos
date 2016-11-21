@@ -3,16 +3,13 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from numpy import savetxt
 import csv
-import file_reading
+import read_and_process
 test_Id = []
 
-train = file_reading.leer_archivo('train10lines.csv')
-test = file_reading.leer_archivo('test10lines.csv')
-
-"""# CARGAR DATASET--------------------------------------------------------------
+# CARGAR DATASET--------------------------------------------------------------
 train = pd.read_csv('train10lines.csv')
 test = pd.read_csv('test10lines.csv')
-"""
+
 # TRAIN y TEST----------------------------------------------------------------
 columnas = ['Id','HelpfulnessNumerator','HelpfulnessDenominator','Summary','Text'] 
 colResultado = ['Prediction']
@@ -30,7 +27,7 @@ for fil in range(0,(len(trainArr))):
 			trainArr[fil][col] = trainArr[fil][col].split()
 
 for fil in range(0,(len(testArr))):
-	test_Id.append(test[fil]['Id'])
+	test_Id.append(testArr[fil][0])
 	for col in range(0,5):
 		if (col == 3):	
 			testArr[fil][col] = testArr[fil][col].split()
